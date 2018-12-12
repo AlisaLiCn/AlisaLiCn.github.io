@@ -1,5 +1,5 @@
 ---
-title: 【译】JavaScript面向对象编程的介绍
+title: 【翻译】JavaScript面向对象编程的介绍
 date: 2018-12-07 19:03:49
 category: translation
 tags: JavaScript
