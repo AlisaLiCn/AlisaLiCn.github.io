@@ -1,5 +1,5 @@
 ---
-title: 【翻译】停止网页无限滚动
+title: 【翻译】一份可以放在web文档head标签中的内容清单
 date: 2018-11-08 20:00:00
 tags: Translation
 ---
