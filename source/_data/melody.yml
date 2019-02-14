@@ -3,13 +3,19 @@
 # ---------------
 theme_color:
   enable: true # or false -> to use the default theme
-  main: "#bfabf3"
-  paginator: "#bfabf3"
-  button_hover: "#bfabf3"
-  text_selection: "#bfabf3"
-  link_color: "#bfabf3"
-  hr_color: "#bfabf3"
-  meta_color: "#bfabf3"
+  main: "#aba9e9"
+  paginator: "#cbc9ff"
+  button_hover: "#cbc9ff"
+  text_selection: "#64638f"
+  link_color: "#aba9e9"
+  hr_color: "#cbc9ff"
+  meta_color: "#9795cf"
+
+#colors for theme
+  #64638f
+  #9795cf
+  #aba9e9
+  #cbc9ff
 
 # Main menu navigation
 # ---------------
@@ -78,9 +84,9 @@ fireworks: false
 
 # Analysis
 # ---------------
-baidu_analytics:
+baidu_analytics: 0cc84cda0ff2dee7c2da93edd8302a7e
 
-google_analytics:
+google_analytics: UA-134526435-1
 
 # stylesheets loaded in the <head>
 # ---------------
@@ -115,7 +121,7 @@ cdn:
 # ---------------
 avatar:
 
-top_img: false # false or url of img
+top_img: ./img/top-img.jpg # false or url of img
 
 post_meta:
   date_type: created # created or updated
