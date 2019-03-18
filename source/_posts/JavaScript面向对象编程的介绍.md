@@ -1,7 +1,7 @@
 ---
 title: 【翻译】JavaScript面向对象编程的介绍
 date: 2018-12-07 19:03:49
-category: translation
+category: Translation
 tags: JavaScript
 ---
 
@@ -172,7 +172,7 @@ bread.price = -10;
 function Book(_name, _price, _author) {
   Product.call(this, _name, _price);
   const author = _author;
-  
+
   this.getAuthor = function() {
     return author;
   }

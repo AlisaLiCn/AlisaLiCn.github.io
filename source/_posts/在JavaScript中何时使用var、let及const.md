@@ -1,7 +1,7 @@
 ---
 title: 【翻译】在JavaScript中何时使用var、let及const
 date: 2019-01-12 20:27:00
-category: translation
+category: Translation
 tags: JavaScript
 ---
 
@@ -244,11 +244,11 @@ var 与 let
 var:
   函数范围的
   在变量声明之前使用时得到undefined
-  
+
 let:
   作用范围是块级的
   在变量声明之前使用时报引用错误
- 
+
 ```
 
 ## let与const
@@ -286,14 +286,14 @@ person = {} // ❌ Assignment to constant variable.
 ```
 var 与 let 与 const
 
-var: 
+var:
   函数范围的
   在变量声明之前使用时会得到undefined
-  
-let: 
+
+let:
   作用范围是块级的
   在变量声明之前使用时会报引用错误
-  
+
 const:
   作用范围是块级的
   在变量声明之前使用时会报引用错误
