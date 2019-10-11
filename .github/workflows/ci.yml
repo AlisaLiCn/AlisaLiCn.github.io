@@ -17,4 +17,4 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: master
         FOLDER: public
-        BUILD_SCRIPT: npm install -g hexo-cli && npm install && hexo clean && hexo g
+        BUILD_SCRIPT: npm install -g hexo-cli && npm install && hexo clean && hexo generate
