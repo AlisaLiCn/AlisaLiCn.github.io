@@ -13,6 +13,13 @@ jobs:
       with:
         persist-credentials: false
 
+
+    - name: Install
+      run: |
+        npm install
+        ./node_modules/.bin/hexo clean
+        ./node_modules/.bin/hexo g
+
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
@@ -20,4 +27,3 @@ jobs:
         BASE_BRANCH: develop
         BRANCH: master
         FOLDER: public
-        BUILD_SCRIPT: npm install && ./node_modules/.bin/hexo clean && ./node_modules/.bin/hexo g
