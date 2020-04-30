@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Chrome扩展程序-扩展与web页面的通信 | Alisa&#39;s blog</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.b40ed18d.css" as="style"><link rel="preload" href="/assets/js/app.b216203d.js" as="script"><link rel="preload" href="/assets/js/4.be4cbab5.js" as="script"><link rel="preload" href="/assets/js/6.bcc93f9d.js" as="script"><link rel="preload" href="/assets/js/15.a80a8c3b.js" as="script"><link rel="prefetch" href="/assets/js/10.26f2be25.js"><link rel="prefetch" href="/assets/js/11.343985ce.js"><link rel="prefetch" href="/assets/js/12.e1992d5e.js"><link rel="prefetch" href="/assets/js/13.dbbcce50.js"><link rel="prefetch" href="/assets/js/14.e3bbce60.js"><link rel="prefetch" href="/assets/js/16.e010f0a1.js"><link rel="prefetch" href="/assets/js/17.6eefa94f.js"><link rel="prefetch" href="/assets/js/18.43591081.js"><link rel="prefetch" href="/assets/js/19.d989cb84.js"><link rel="prefetch" href="/assets/js/20.4df98852.js"><link rel="prefetch" href="/assets/js/21.5c9102e3.js"><link rel="prefetch" href="/assets/js/22.bc615f3b.js"><link rel="prefetch" href="/assets/js/23.e82653f8.js"><link rel="prefetch" href="/assets/js/3.53405493.js"><link rel="prefetch" href="/assets/js/5.ec1f6c47.js"><link rel="prefetch" href="/assets/js/7.78f3d4a5.js"><link rel="prefetch" href="/assets/js/8.826253e5.js"><link rel="prefetch" href="/assets/js/9.79c1575a.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.ae45504d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b40ed18d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">Alisa's blog</a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/" class="nav-link">Home</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div></div></header> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">Alisa's blog </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/" class="nav-link">Home</a></li></ul></div></div></div> <div class="content-wrapper"><div class="content-inner"><div id="vuepress-theme-blog__post-layout"><div class="vuepress-blog-theme-content"><div class="content-title">
+      Chrome扩展程序-扩展与web页面的通信
+    </div> <div class="content__default"><h2 id="可参考的资料"><a href="#可参考的资料" class="header-anchor">#</a> 可参考的资料</h2> <ul><li><a href="https://developer.chrome.com/extensions" target="_blank" rel="noopener noreferrer">官方开发文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> ：目前全英文，需要翻**墙。</li> <li><a href="https://github.com/sxei/chrome-plugin-demo" target="_blank" rel="noopener noreferrer">Chrome插件开发全攻略<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>：github上star挺多的一个repo，开发前可先过一下。</li></ul> <p>搜索到的资料可以作为参考，实际开发应以官方最新文档为准。</p> <h2 id="文件结构"><a href="#文件结构" class="header-anchor">#</a> 文件结构</h2> <ul><li><code>manifest.json</code>配置文件：<strong>必须</strong>，<a href="https://developer.chrome.com/extensions/manifest" target="_blank" rel="noopener noreferrer">详细说明文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li>其他<code>JavaScript</code>、<code>HTML</code>、<code>CSS</code>文件：根据功能和个人喜好，进行增减以及结构调整。</li></ul> <p>开发扩展程序与WEB开发类似，主要应用的技术为<code>JavaScript</code>、<code>HTML</code>、<code>CSS</code>等，再根据功能，调用chrome提供的各类API。</p> <p>最终的文件结构可以类似这样：</p> <div class="language- extra-class"><pre class="language-text"><code>my-extension
+  - manifest.json  // required
+  pages
+    - background.html
+    - popup.html
+  icons
+    - logo_16.png
+    - logo_48.png
+    - logo_128.png
+  js
+    - background.js
+    - content.js
+    - inject.js
+    - popup.js
+  css
+    - popup.css
+</code></pre></div><p>开发时为防止后续功能繁多，我使用了Vue-Cli初始化项目，并使用插件<a href="https://github.com/superoo7/vue-cli-plugin-chrome-ext" target="_blank" rel="noopener noreferrer">vue-cli-plugin-chrome-ext<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>修改文件结构，再根据自己需要修改vue.config.js以修改webpack的一些配置。</p> <h2 id="web页面与扩展程序之间通信"><a href="#web页面与扩展程序之间通信" class="header-anchor">#</a> web页面与扩展程序之间通信</h2> <h3 id="官方相关的文档"><a href="#官方相关的文档" class="header-anchor">#</a> 官方相关的文档</h3> <ul><li>消息通信 <a href="https://developer.chrome.com/extensions/messaging#external-webpage" target="_blank" rel="noopener noreferrer">从web页面发送消息<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li>外部连接相关 <a href="https://developer.chrome.com/extensions/manifest/externally_connectable" target="_blank" rel="noopener noreferrer">externally_connectable<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li>监听事件 <a href="https://developer.chrome.com/extensions/runtime#event-onMessageExternal" target="_blank" rel="noopener noreferrer">onMessageExternal用法<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <h3 id="权限声明"><a href="#权限声明" class="header-anchor">#</a> 权限声明</h3> <p>首先，需要在<code>manifest.json</code>中，配置<code>externally_connectable</code>字段，来声明哪些web应用可以通过后面的方式，与扩展程序建立连接。在matches字段中，注明需要通信的web网站清单。</p> <div class="language- extra-class"><pre class="language-text"><code>&quot;externally_connectable&quot;: {
+  &quot;matches&quot;: [&quot;*://*.example.com/*&quot;]
+}
+</code></pre></div><p>matches数组的每一项为URL字符串。且URL值必须要包含到二级域名级别。</p> <p><code>externally_connectable</code>字段，还可以声明<code>ids</code>字段，来指定需要通信的其他Chrome应用或者其他扩展程序。</p> <h3 id="通信方式"><a href="#通信方式" class="header-anchor">#</a> 通信方式</h3> <p>从Web页面向扩展程序发送消息，可以使用<code>chrome.runtime.sendMessage</code>,需要传入扩展程序的ID，回调函数可以接收Chrome扩展响应的消息：</p> <div class="language- extra-class"><pre class="language-text"><code>const extensionId = 'deakpiepsidfpdfdioffidjfifjtest' // 想要与之通信的扩展ID
+
+// 向Chrome扩展发送请求
+chrome.runtime.sendMessage(extensionId, {
+  event: 'requestEvent',
+  data: requestData,
+}, (response) =&gt; {
+    console.log('res data', response)
+}
+</code></pre></div><p>在Chrome扩展内使用<code>chrome.runtime.onMessageExternal.addListener</code>监听消息，接收后用<code>sendResponse</code>发送响应消息：</p> <div class="language- extra-class"><pre class="language-text"><code>chrome.runtime.onMessageExternal.addListener(async (request, sender, sendResponse) =&gt; {
+if (request.event == 'requestEvent') {
+  const res = 'res message'
+  sendResponse(res)
+}
+})
+
+</code></pre></div><h2 id="监听和修改web请求"><a href="#监听和修改web请求" class="header-anchor">#</a> 监听和修改Web请求</h2> <p>文档位置：<a href="https://developer.chrome.com/extensions/webRequest" target="_blank" rel="noopener noreferrer">webRequest<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>依然是要先进行权限声明：</p> <div class="language- extra-class"><pre class="language-text"><code>  {
+      &quot;name&quot;: &quot;My extension&quot;,
+      ...
+      &quot;permissions&quot;: [
+        &quot;webRequest&quot;,
+        &quot;*://*.google.com/&quot;
+      ],
+      ...
+  }
+</code></pre></div><p>Chrome提供了一系列的事件来监听Web请求生命周期的各个阶段，其中<code>onBeforeSendHeaders</code>事件被触发的阶段，可以用来增、删、改HTTP请求的headers。也可以在这个事件中取消请求。</p> <p>用法， 修改之后return新的配置：</p> <div class="language- extra-class"><pre class="language-text"><code>chrome.webRequest.onBeforeSendHeaders.addListener((details) =&gt; {
+  const { requestHeaders } = details
+
+  requestHeaders.push({
+      name: 'x-request-xx',
+      value: '...'
+  })
+
+  return { requestHeaders: requestHeaders }
+})
+</code></pre></div><h2 id="cookies操作"><a href="#cookies操作" class="header-anchor">#</a> cookies操作</h2> <p>使用cookie相关的API，需要先在<code>manifest.json</code>中的<code>permissions</code>字段进行权限声明，要访问cookies的host也要一并声明：</p> <div class="language- extra-class"><pre class="language-text"><code>{
+  &quot;name&quot;: &quot;My extension&quot;,
+  ...
+  &quot;permissions&quot;: [
+    &quot;cookies&quot;,
+    &quot;*://*.google.com/&quot;
+  ],
+  ...
+}
+
+</code></pre></div><p>Chrome共提供了5个方法和1个监听事件，用于cookie的操作和对cookie变化的监听：</p> <p><strong>方法</strong>：</p> <ul><li>get: chrome.cookies.get(object details, function callback)</li> <li>getAll</li> <li>set</li> <li>remove</li> <li>getAllCookieStores</li></ul> <p><strong>事件</strong>：</p> <ul><li>onChanged</li></ul> <h3 id="获取指定名称的cookie"><a href="#获取指定名称的cookie" class="header-anchor">#</a> 获取指定名称的cookie</h3> <div class="language- extra-class"><pre class="language-text"><code>chrome.cookies.get({
+  url: 'https://example.com',
+  name: 'token',
+}, (cookie) =&gt; {
+  console.log(‘token: ’, cookie.value) // cookie为获取到的cookie对象
+})
+</code></pre></div><h3 id="设置cookie"><a href="#设置cookie" class="header-anchor">#</a> 设置cookie</h3> <div class="language- extra-class"><pre class="language-text"><code> chrome.cookies.set({
+    url: 'http://example.com',
+    name: 'x-request-xx',
+    value: 'value...',
+  }, (cookie) =&gt; {
+    console.log('set cookie', cookie)
+  })
+</code></pre></div><h2 id="总结"><a href="#总结" class="header-anchor">#</a> 总结</h2> <p>Chrome扩展与web之间通信，还有一些其他方式，但个人认为按照官方文档中推荐的方式比较容易使用。</p> <p>在开发测试的过程中，如果担心扩展的ID值发生变化，可以在Chrome的Dashboard中建立好应用后，把生成的public key的值配置到manifest.json的key字段中，这样就能保证开发过程中也能生成唯一固定的的ID了。但现在新版的Dashboard改版后好像把public key隐藏掉了...</p> <p>如有其它的开发技巧，还请看到这篇文章的人赐教哇~</p></div> <!----> <hr> <!----></div> <div class="vuepress-blog-theme-aside"><div class="sticker vuepress-toc"><div class="vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h2 active"><a href="#可参考的资料" title="可参考的资料">可参考的资料</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#文件结构" title="文件结构">文件结构</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#web页面与扩展程序之间通信" title="web页面与扩展程序之间通信">web页面与扩展程序之间通信</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#官方相关的文档" title="官方相关的文档">官方相关的文档</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#权限声明" title="权限声明">权限声明</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#通信方式" title="通信方式">通信方式</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#监听和修改web请求" title="监听和修改Web请求">监听和修改Web请求</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#cookies操作" title="cookies操作">cookies操作</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#获取指定名称的cookie" title="获取指定名称的cookie">获取指定名称的cookie</a></div><div class="vuepress-toc-item vuepress-toc-h3"><a href="#设置cookie" title="设置cookie">设置cookie</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#总结" title="总结">总结</a></div></div></div></div></div></div></div> <footer class="footer" data-v-ced1dfac><ul data-v-ced1dfac><li class="footer-item" data-v-ced1dfac>
+      @2018 - 2020 By Alisa
+    </li> <li class="footer-item" data-v-ced1dfac>
+      Driven -
+      <a href="https://vuepress.vuejs.org/" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-ced1dfac>  Vuepress </a>
+      | Theme - Alisa
+    </li></ul></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.b216203d.js" defer></script><script src="/assets/js/4.be4cbab5.js" defer></script><script src="/assets/js/6.bcc93f9d.js" defer></script><script src="/assets/js/15.a80a8c3b.js" defer></script>
+  </body>
+</html>

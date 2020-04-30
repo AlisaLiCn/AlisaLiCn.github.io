@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>微信小程序-网易云音乐 | Alisa&#39;s blog</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.b40ed18d.css" as="style"><link rel="preload" href="/assets/js/app.b216203d.js" as="script"><link rel="preload" href="/assets/js/4.be4cbab5.js" as="script"><link rel="preload" href="/assets/js/6.bcc93f9d.js" as="script"><link rel="preload" href="/assets/js/20.4df98852.js" as="script"><link rel="prefetch" href="/assets/js/10.26f2be25.js"><link rel="prefetch" href="/assets/js/11.343985ce.js"><link rel="prefetch" href="/assets/js/12.e1992d5e.js"><link rel="prefetch" href="/assets/js/13.dbbcce50.js"><link rel="prefetch" href="/assets/js/14.e3bbce60.js"><link rel="prefetch" href="/assets/js/15.a80a8c3b.js"><link rel="prefetch" href="/assets/js/16.e010f0a1.js"><link rel="prefetch" href="/assets/js/17.6eefa94f.js"><link rel="prefetch" href="/assets/js/18.43591081.js"><link rel="prefetch" href="/assets/js/19.d989cb84.js"><link rel="prefetch" href="/assets/js/21.5c9102e3.js"><link rel="prefetch" href="/assets/js/22.bc615f3b.js"><link rel="prefetch" href="/assets/js/23.e82653f8.js"><link rel="prefetch" href="/assets/js/3.53405493.js"><link rel="prefetch" href="/assets/js/5.ec1f6c47.js"><link rel="prefetch" href="/assets/js/7.78f3d4a5.js"><link rel="prefetch" href="/assets/js/8.826253e5.js"><link rel="prefetch" href="/assets/js/9.79c1575a.js"><link rel="prefetch" href="/assets/js/vuejs-paginate.ae45504d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.b40ed18d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-blog__global-layout"><header id="header"><div class="header-wrapper"><div class="title"><a href="/" class="nav-link home-link">Alisa's blog</a></div> <div class="header-right-wrap"><ul class="nav"><li class="nav-item"><a href="/" class="nav-link">Home</a></li></ul> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div></div></header> <div id="mobile-header"><div class="mobile-header-bar"><div class="mobile-header-title"><a href="/" class="nav-link mobile-home-link">Alisa's blog </a> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div> <div class="mobile-menu-wrapper"><hr class="menu-divider"> <ul class="mobile-nav"><li class="mobile-nav-item"><a href="/" class="nav-link">Home</a></li></ul></div></div></div> <div class="content-wrapper"><div class="content-inner"><div id="vuepress-theme-blog__post-layout"><div class="vuepress-blog-theme-content"><div class="content-title">
+      微信小程序-网易云音乐
+    </div> <div class="content__default"><p>一个微信小程序版的网易云音乐播放器练习demo</p> <p><a href="https://github.com/AlisaLiCn/mp-music" target="_blank" rel="noopener noreferrer">Github<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>地址</p> <h2 id="主要功能"><a href="#主要功能" class="header-anchor">#</a> 主要功能</h2> <ul><li>推荐音乐</li> <li>云音乐热歌榜</li> <li>搜索</li> <li>歌曲播放页面
+<ul><li>歌词滚动</li> <li>播放进度条</li> <li>点击跳转进度</li> <li>拖动跳转进度</li></ul></li></ul> <h2 id="搭建过程记录"><a href="#搭建过程记录" class="header-anchor">#</a> 搭建过程记录</h2> <ul><li>还是用<a href="http://mpvue.com/mpvue/" target="_blank" rel="noopener noreferrer">mpvue<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>来初始化，vue的写法，比较顺手。<div class="language- extra-class"><pre class="language-text"><code>
+vue init mpvue/mpvue-quickstart mp-music
+
+cd mp-music
+npm install
+
+</code></pre></div></li> <li>HTTP请求，用的<a href="https://wendux.github.io/dist/#/doc/flyio/readme" target="_blank" rel="noopener noreferrer">flyio<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</li> <li>相关的API，使用的是大佬整理维护的Nodejs版本，戳<a href="https://github.com/Binaryify/NeteaseCloudMusicApi" target="_blank" rel="noopener noreferrer">Github<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>可查看，自己简单部署了一下，Nginx配置如下：<div class="language- extra-class"><pre class="language-text"><code>
+  server{
+    listen  80;
+    server_name example.com;
+
+    rewrite ^(.*) https://$host$1 permanent;
+  }
+
+  server {
+    listen 443 ssl;
+    server_name example.com;
+    ssl on;
+
+    ssl_certificate example.com.pem;
+    ssl_certificate_key example.com.key;
+
+    ssl_session_cache    shared:SSL:1m;
+    ssl_session_timeout  5m;
+
+    location / {
+      proxy_pass http://127.0.0.1:3000;
+    }
+
+    ssl_ciphers  HIGH:!aNULL:!MD5;
+    ssl_prefer_server_ciphers  on;
+  }
+
+</code></pre></div></li> <li>安装stylus，添加loader：<div class="language- extra-class"><pre class="language-text"><code>
+npm install stylus stylus-loader  --save-dev
+
+// webpack.base.conf.js
+{
+  test: /\.styl$/,
+  loader: ['url-loader', 'css-loader', 'stylus-loader'],
+}
+
+</code></pre></div></li> <li>app.json中定义tabBar；</li> <li>使用微信小程序的<a href="https://developers.weixin.qq.com/miniprogram/dev/api/InnerAudioContext.html" target="_blank" rel="noopener noreferrer">API<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，创建音频实例：<div class="language- extra-class"><pre class="language-text"><code>
+  wx.createInnerAudioContext()
+
+</code></pre></div></li> <li>歌词解析：用了个开源的lyric-parser，但解析网易云音乐歌词存在bug，可以参考issues中讨论的解决方式，最后又自行增加了一个destroy()方法在离开页面时销毁实例：<div class="language- extra-class"><pre class="language-text"><code>
+   &quot;lyric-parser&quot;: &quot;git+https://github.com/AlisaLiCn/lyric-parser.git&quot;,
+
+</code></pre></div></li> <li>进度跳转：<div class="language- extra-class"><pre class="language-text"><code>
+  // 音频跳转，单位秒，小数点需要保留在3位以内，不然好像不生效
+  innerAudioContext.seek(time)
+
+  // 歌词跳转，单位毫秒
+  lyric.seek(time * 1000)
+
+</code></pre></div></li></ul> <h2 id="构建命令"><a href="#构建命令" class="header-anchor">#</a> 构建命令</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>
+<span class="token comment"># 开发时构建</span>
+<span class="token function">npm</span> run dev
+
+
+</code></pre></div><h2 id="预览"><a href="#预览" class="header-anchor">#</a> 预览</h2> <p>构建完成后，使用微信开发者工具打开，也可使用手机扫码预览</p> <p>截图预览：
+<img src="play-list.jpg" alt=""></p> <p><img src="play-search.jpg" alt=""></p> <p><img src="play-detail.jpg" alt=""></p> <p><a href="https://github.com/AlisaLiCn/mp-music" target="_blank" rel="noopener noreferrer">Github<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>地址</p></div> <!----> <hr> <!----></div> <div class="vuepress-blog-theme-aside"><div class="sticker vuepress-toc"><div class="vuepress-toc"><div class="vuepress-toc-item vuepress-toc-h2 active"><a href="#主要功能" title="主要功能">主要功能</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#搭建过程记录" title="搭建过程记录">搭建过程记录</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#构建命令" title="构建命令">构建命令</a></div><div class="vuepress-toc-item vuepress-toc-h2"><a href="#预览" title="预览">预览</a></div></div></div></div></div></div></div> <footer class="footer" data-v-ced1dfac><ul data-v-ced1dfac><li class="footer-item" data-v-ced1dfac>
+      @2018 - 2020 By Alisa
+    </li> <li class="footer-item" data-v-ced1dfac>
+      Driven -
+      <a href="https://vuepress.vuejs.org/" target="_blank" rel="noopener noreferrer" class="nav-link external" data-v-ced1dfac>  Vuepress </a>
+      | Theme - Alisa
+    </li></ul></footer></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.b216203d.js" defer></script><script src="/assets/js/4.be4cbab5.js" defer></script><script src="/assets/js/6.bcc93f9d.js" defer></script><script src="/assets/js/20.4df98852.js" defer></script>
+  </body>
+</html>
